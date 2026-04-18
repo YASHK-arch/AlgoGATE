@@ -31,7 +31,7 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/AlgoGATE">
       <AuthProvider>
         <AppProvider>
           <div className="min-h-screen bg-dark-900 text-gray-100">
