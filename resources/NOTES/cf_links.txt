@@ -1,0 +1,921 @@
+Topic Name - Bit-Manipulation
+🟢 800 Rating (Warm-up)
+https://codeforces.com/problemset/problem/71/A
+ → Way Too Long Words
+👉 Hint: If length > 10 → compress using first + count + last
+https://codeforces.com/problemset/problem/231/A
+ → Team
+👉 Hint: Count how many 1s per row
+https://codeforces.com/problemset/problem/158/A
+ → Next Round
+👉 Hint: Find k-th score, count ≥ that (ignore zeros carefully)
+https://codeforces.com/problemset/problem/50/A
+ → Domino piling
+👉 Hint: Max dominoes = total cells / 2
+https://codeforces.com/problemset/problem/263/A
+ → Beautiful Matrix
+👉 Hint: Find position of 1 → distance to center (3,3)
+https://codeforces.com/problemset/problem/266/A
+ → Stones on the Table
+👉 Hint: Count adjacent equal characters
+https://codeforces.com/problemset/problem/112/A
+ → Petya and Strings
+👉 Hint: Case-insensitive string comparison
+
+
+🟡 900 Rating
+https://codeforces.com/problemset/problem/282/A
+ → Bit++
+👉 Hint: Just track +1 / -1 operations
+https://codeforces.com/problemset/problem/734/A
+ → Anton and Danik
+👉 Hint: Count 'A' vs 'D'
+https://codeforces.com/problemset/problem/236/A
+ → Boy or Girl
+👉 Hint: Count distinct characters
+https://codeforces.com/problemset/problem/791/A
+ → Bear and Big Brother
+👉 Hint: Loop until Limak > Bob
+https://codeforces.com/problemset/problem/59/A
+ → Word
+👉 Hint: Count uppercase vs lowercase
+https://codeforces.com/problemset/problem/41/A
+ → Translation
+👉 Hint: Reverse one string and compare
+
+🔵 1000 Rating
+https://codeforces.com/problemset/problem/266/B
+ → Queue at the School
+👉 Hint: Simulate swaps for t seconds
+https://codeforces.com/problemset/problem/339/A
+ → Helpful Maths
+👉 Hint: Extract numbers → sort → rebuild string
+https://codeforces.com/problemset/problem/208/A
+ → Dubstep
+👉 Hint: Replace "WUB" with spaces, clean extras
+https://codeforces.com/problemset/problem/271/A
+ → Beautiful Year
+👉 Hint: Check digits uniqueness in loop
+https://codeforces.com/problemset/problem/344/A
+ → Magnets
+👉 Hint: Count transitions between groups
+
+🟣 1200 Rating
+https://codeforces.com/problemset/problem/118/A
+ → Epic Game
+👉 Hint: Repeated gcd subtraction → simulate
+https://codeforces.com/problemset/problem/467/A
+ → George and Accommodation
+👉 Hint: Check if p + 2 ≤ q
+https://codeforces.com/problemset/problem/977/A
+ → Wrong Subtraction
+👉 Hint: If last digit = 0 → divide, else subtract
+https://codeforces.com/problemset/problem/96/A
+ → Football
+👉 Hint: Check for 7 consecutive same chars
+https://codeforces.com/problemset/problem/785/A
+ → Anton and Polyhedrons
+👉 Hint: Map shapes → faces → sum
+
+🔴 1300 Rating
+https://codeforces.com/problemset/problem/580/A
+ → Kefa and First Steps
+👉 Hint: Longest non-decreasing subarray
+https://codeforces.com/problemset/problem/230/B
+ → T-primes
+👉 Hint: Perfect square + prime check
+https://codeforces.com/problemset/problem/492/B
+ → Vanya and Lanterns
+👉 Hint: Sort → max gap + edge cases
+https://codeforces.com/problemset/problem/337/A
+ → Puzzles
+👉 Hint: Sort → sliding window min difference
+⚫ 1400 Rating
+https://codeforces.com/problemset/problem/456/A
+ → Laptops
+👉 Hint: Sort by price → check quality inconsistency
+https://codeforces.com/problemset/problem/160/A
+ → Twins
+👉 Hint: Take largest coins first (greedy)
+https://codeforces.com/problemset/problem/136/A
+ → Presents
+👉 Hint: Reverse mapping (who gave gift to whom)
+https://codeforces.com/problemset/problem/441/A
+ → Valera and Antique Items
+👉 Hint: Check if any price < v
+
+🟤 1500 Rating
+https://codeforces.com/problemset/problem/149/A
+ → Business Trip
+👉 Hint: Sort months descending → pick until ≥ k
+https://codeforces.com/problemset/problem/337/B
+ → Routine Problem
+👉 Hint: Fraction comparison → reduce using gcd
+https://codeforces.com/problemset/problem/489/B
+ → BerSU Ball
+👉 Hint: Sort both arrays → greedy pairing
+https://codeforces.com/problemset/problem/474/B
+ → Worms
+👉 Hint: Prefix sum + binary search
+
+
+
+Topic Name - Hashing
+
+🟢 800 Rating (Basic Hashing – frequency / set)
+https://codeforces.com/problemset/problem/443/A
+ → Anton and Letters
+👉 Hint: Use a set to count distinct lowercase letters
+https://codeforces.com/problemset/problem/228/A
+ → Is your horseshoe on the other hoof?
+👉 Hint: Count distinct → answer = duplicates
+https://codeforces.com/problemset/problem/236/A
+ → Boy or Girl
+👉 Hint: Distinct characters using set
+https://codeforces.com/problemset/problem/271/A
+ → Beautiful Year
+👉 Hint: Check uniqueness of digits with set
+🟡 900 Rating (Frequency Maps Start)
+https://codeforces.com/problemset/problem/32/B
+ → Borze
+👉 Hint: Parse string carefully (not pure hashing but pattern parsing)
+https://codeforces.com/problemset/problem/707/A
+ → Brain's Photos
+👉 Hint: Track colors using condition / set
+https://codeforces.com/problemset/problem/855/A
+ → Tom Riddle’s Diary
+👉 Hint: Use set to detect duplicates while reading
+https://codeforces.com/problemset/problem/918/B
+ → Radio Station
+👉 Hint: Map IP → name, then lookup
+
+🔵 1000 Rating (Classic Map Usage)
+https://codeforces.com/problemset/problem/4/C
+ → Registration System
+👉 Hint: Use map<string, count> to handle duplicates
+https://codeforces.com/problemset/problem/499/B
+ → Lecture
+👉 Hint: Store pairs in map → pick shorter string
+https://codeforces.com/problemset/problem/43/A
+ → Football
+👉 Hint: Count frequency of team names
+https://codeforces.com/problemset/problem/141/A
+ → Amusing Joke
+👉 Hint: Frequency match of characters
+
+🟣 1200 Rating (Real Hashing Thinking)
+https://codeforces.com/problemset/problem/500/A
+ → New Year Transportation
+👉 Hint: Not pure hashing (skip if needed)
+https://codeforces.com/problemset/problem/208/A
+ → Dubstep
+👉 Hint: String manipulation + cleanup
+https://codeforces.com/problemset/problem/686/A
+ → Free Ice Cream
+👉 Hint: Track state (not heavy hashing)
+https://codeforces.com/problemset/problem/520/A
+ → Pangram
+👉 Hint: Use set → check size = 26
+
+👉 (1200 hashing is still light — CF mixes concepts here)
+
+🔴 1300 Rating (Important HashMap Patterns)
+https://codeforces.com/problemset/problem/1399/A
+ → Remove Smallest
+👉 Hint: Sort + check differences (not pure hashing but good combo)
+https://codeforces.com/problemset/problem/977/C
+ → Less or Equal
+👉 Hint: Sort + careful boundary logic
+https://codeforces.com/problemset/problem/1462/B
+ → Last Year’s Substring
+👉 Hint: Try prefix + suffix combinations
+https://codeforces.com/problemset/problem/118/B
+ → Present from Lena
+👉 Hint: Pattern printing
+
+👉 ⚠️ CF 1300 has fewer pure hashing — it mixes with greedy
+
+⚫ 1400 Rating (Actual Hashing Power Begins)
+https://codeforces.com/problemset/problem/1520/D
+ → Same Differences
+👉 Hint: Store a[i] - i frequency in map
+https://codeforces.com/problemset/problem/1399/C
+ → Boats Competition
+👉 Hint: Frequency + try all possible sums
+https://codeforces.com/problemset/problem/1512/C
+ → A-B Palindrome
+👉 Hint: Two pointers + constraints
+https://codeforces.com/problemset/problem/1368/B
+ → Codeforces Subsequences
+👉 Hint: Frequency distribution logic
+
+🟤 1500 Rating (Strong Hashing / Map Insight)
+https://codeforces.com/problemset/problem/1520/A
+ → Do Not Be Distracted!
+👉 Hint: Track visited characters with set
+https://codeforces.com/problemset/problem/1490/C
+ → Sum of Cubes
+👉 Hint: Use set of cubes for fast lookup
+https://codeforces.com/problemset/problem/1472/D
+ → Even-Odd Game
+👉 Hint: Sorting + greedy (not pure hashing)
+https://codeforces.com/problemset/problem/1462/D
+ → Add to Neighbour and Remove
+👉 Hint: Try partition sums + frequency
+
+
+Topic Name - Binary Search
+
+🟢 800 Rating (Intro to Binary Thinking)
+https://codeforces.com/problemset/problem/706/B
+ → Interesting drink
+👉 Hint: Sort prices → for each query, find rightmost ≤ x
+https://codeforces.com/problemset/problem/474/B
+ → Worms
+👉 Hint: Prefix sum → find pile using binary search
+https://codeforces.com/problemset/problem/977/C
+ → Less or Equal
+👉 Hint: Sort → check k-th element carefully
+🟡 900 Rating (Binary Search Basics)
+https://codeforces.com/problemset/problem/1352/C
+ → K-th Not Divisible by n
+👉 Hint: Count numbers not divisible → derive formula or BS
+https://codeforces.com/problemset/problem/492/B
+ → Vanya and Lanterns
+👉 Hint: Sort → max gap (can also think as BS radius)
+https://codeforces.com/problemset/problem/702/A
+ → Maximum Increase
+👉 Hint: Linear, but helps build monotonic thinking
+
+🔵 1000 Rating (Standard Applications)
+https://codeforces.com/problemset/problem/371/C
+ → Hamburgers
+👉 Hint: Binary search answer (max burgers)
+https://codeforces.com/problemset/problem/189/A
+ → Cut Ribbon
+👉 Hint: DP primary, but think feasibility
+https://codeforces.com/problemset/problem/448/A
+ → Rewards
+👉 Hint: Simple math (warmup break problem)
+
+🟣 1200 Rating (Binary Search on Answer Begins)
+https://codeforces.com/problemset/problem/670/D1
+ → Magic Powder - 1
+👉 Hint: Check if x products possible → BS on x
+https://codeforces.com/problemset/problem/459/B
+ → Pashmak and Flowers
+👉 Hint: Sorting + counting extremes
+https://codeforces.com/problemset/problem/116/A
+ → Tram
+👉 Hint: Simulation (easy break)
+
+🔴 1300 Rating (Important Level)
+https://codeforces.com/problemset/problem/363/B
+ → Fence
+👉 Hint: Sliding window (but think optimization patterns)
+https://codeforces.com/problemset/problem/478/B
+ → Random Teams
+👉 Hint: Math + combinations
+https://codeforces.com/problemset/problem/20/C
+ → Dijkstra?
+👉 Hint: Not BS, but useful contrast
+
+👉 ⚠️ CF mixes patterns heavily here
+
+⚫ 1400 Rating (Real Binary Search Skills)
+https://codeforces.com/problemset/problem/1201/C
+ → Maximum Median
+👉 Hint: Binary search median → check cost
+https://codeforces.com/problemset/problem/812/C
+ → Sagheer and Nubian Market
+👉 Hint: Sort + BS on number of items
+https://codeforces.com/problemset/problem/1118/B
+ → Tanya and Candies
+👉 Hint: Prefix sums (not pure BS, but pattern mix)
+🟤 1500 Rating (Strong Binary Search)
+https://codeforces.com/problemset/problem/1304/C
+ → Air Conditioner
+👉 Hint: Maintain feasible range (interval logic)
+https://codeforces.com/problemset/problem/1191/C
+ → Tokitsukaze, CSL and Stone Game
+👉 Hint: Group processing + math
+https://codeforces.com/problemset/problem/1359/C
+ → Mixing Water
+👉 Hint: Binary search optimal pours
+
+Topic Name - Strings
+
+🟢 800 Rating (Basic String Handling)
+https://codeforces.com/problemset/problem/112/A
+ → Petya and Strings
+👉 Hint: Convert both strings to same case → compare
+https://codeforces.com/problemset/problem/71/A
+ → Way Too Long Words
+👉 Hint: Compress if length > 10
+https://codeforces.com/problemset/problem/59/A
+ → Word
+👉 Hint: Count uppercase vs lowercase
+https://codeforces.com/problemset/problem/41/A
+ → Translation
+👉 Hint: Reverse string and compare
+https://codeforces.com/problemset/problem/281/A
+ → Word Capitalization
+👉 Hint: Only first character changes
+
+🟡 900 Rating (Parsing + Simple Logic)
+https://codeforces.com/problemset/problem/266/B
+ → Queue at the School
+👉 Hint: Simulate swaps in string
+https://codeforces.com/problemset/problem/734/A
+ → Anton and Danik
+👉 Hint: Count occurrences
+https://codeforces.com/problemset/problem/208/A
+ → Dubstep
+👉 Hint: Replace "WUB" → handle extra spaces
+https://codeforces.com/problemset/problem/443/A
+ → Anton and Letters
+👉 Hint: Extract only lowercase letters → use set
+
+🔵 1000 Rating (Core String Techniques)
+https://codeforces.com/problemset/problem/339/A
+ → Helpful Maths
+👉 Hint: Split → sort → join
+https://codeforces.com/problemset/problem/266/A
+ → Stones on the Table
+👉 Hint: Count consecutive equal chars
+https://codeforces.com/problemset/problem/110/A
+ → Nearly Lucky Number
+👉 Hint: Count lucky digits (4,7)
+https://codeforces.com/problemset/problem/118/A
+ → String Task
+👉 Hint: Remove vowels + lowercase + add dots
+
+🟣 1200 Rating (Pattern Recognition Begins)
+https://codeforces.com/problemset/problem/96/A
+ → Football
+👉 Hint: Check 7 consecutive same chars
+https://codeforces.com/problemset/problem/520/A
+ → Pangram
+👉 Hint: Check if all 26 letters present
+https://codeforces.com/problemset/problem/318/A
+ → Even Odds
+👉 Hint: Math + indexing (light string break)
+https://codeforces.com/problemset/problem/131/A
+ → cAPS lOCK
+👉 Hint: Toggle case based on condition
+
+🔴 1300 Rating (Important String Logic)
+https://codeforces.com/problemset/problem/580/A
+ → Kefa and First Steps
+👉 Hint: Longest non-decreasing segment
+https://codeforces.com/problemset/problem/282/A
+ → Bit++
+👉 Hint: Operation parsing
+https://codeforces.com/problemset/problem/43/A
+ → Football
+👉 Hint: Frequency of strings
+https://codeforces.com/problemset/problem/160/A
+ → Twins
+👉 Hint: Greedy (break from strings but useful)
+
+👉 ⚠️ CF mixes topics — focus on string-related logic
+
+⚫ 1400 Rating (Strong String Thinking)
+https://codeforces.com/problemset/problem/476/B
+ → Dreamoon and WiFi
+👉 Hint: Count possibilities → probability
+https://codeforces.com/problemset/problem/514/A
+ → Chewbaсca and Number
+👉 Hint: Replace digits greedily
+https://codeforces.com/problemset/problem/118/B
+ → Present from Lena
+👉 Hint: Pattern printing
+https://codeforces.com/problemset/problem/271/B
+ → Prime Matrix
+👉 Hint: Precompute primes
+
+🟤 1500 Rating (Real String Skills)
+https://codeforces.com/problemset/problem/1462/B
+ → Last Year’s Substring
+👉 Hint: Check prefix + suffix combinations
+https://codeforces.com/problemset/problem/1512/C
+ → A-B Palindrome
+👉 Hint: Two pointers + constraints
+https://codeforces.com/problemset/problem/1530/B
+ → Putting Plates
+👉 Hint: Pattern construction
+https://codeforces.com/problemset/problem/1092/C
+ → Prefixes and Suffixes
+👉 Hint: Reconstruct original string
+
+
+Topic Name - GCD and Prime Numbers
+
+🟢 800 Rating (Basic GCD / Prime Checks)
+https://codeforces.com/problemset/problem/977/A
+ → Wrong Subtraction
+👉 Hint: Not pure GCD, but number manipulation basics
+https://codeforces.com/problemset/problem/1374/A
+ → Required Remainder
+👉 Hint: Work backward using modulo
+https://codeforces.com/problemset/problem/707/A
+ → Brain's Photos
+👉 Hint: Not prime — warm-up break
+https://codeforces.com/problemset/problem/630/A
+ → Again Twenty Five!
+👉 Hint: Pattern observation (last digits fixed)
+🟡 900 Rating (Intro Number Theory)
+https://codeforces.com/problemset/problem/148/A
+ → Insomnia cure
+👉 Hint: Count multiples → inclusion idea
+https://codeforces.com/problemset/problem/80/A
+ → Panoramix's Prediction
+👉 Hint: Find next prime after n
+https://codeforces.com/problemset/problem/472/A
+ → Design Tutorial: Learn from Math
+👉 Hint: Split into two composite numbers
+https://codeforces.com/problemset/problem/236/A
+ → Boy or Girl
+👉 Hint: Not prime — set usage (light break)
+
+🔵 1000 Rating (Core GCD / Prime Logic)
+https://codeforces.com/problemset/problem/230/B
+ → T-primes
+👉 Hint: Perfect square + prime check of sqrt
+https://codeforces.com/problemset/problem/26/A
+ → Almost Prime
+👉 Hint: Count numbers with exactly 2 distinct primes
+https://codeforces.com/problemset/problem/785/A
+ → Anton and Polyhedrons
+👉 Hint: Not prime — break problem
+https://codeforces.com/problemset/problem/271/A
+ → Beautiful Year
+👉 Hint: Not prime — digit uniqueness
+
+🟣 1200 Rating (GCD Thinking Begins)
+https://codeforces.com/problemset/problem/1216/D
+ → Swords
+👉 Hint: Take gcd of differences
+https://codeforces.com/problemset/problem/75/C
+ → Modified GCD
+👉 Hint: Precompute divisors of gcd
+https://codeforces.com/problemset/problem/1245/A
+ → Good ol' Numbers Coloring
+👉 Hint: If gcd(a,b) == 1 → YES
+https://codeforces.com/problemset/problem/1478/B
+ → Nezzar and Lucky Number
+👉 Hint: Try subtracting multiples
+
+🔴 1300 Rating (Important Level)
+https://codeforces.com/problemset/problem/1030/A
+ → In Search of an Easy Problem
+👉 Hint: Not GCD — quick check
+https://codeforces.com/problemset/problem/1498/A
+ → GCD Sum
+👉 Hint: Iterate until gcd(n, sum_digits(n)) > 1
+https://codeforces.com/problemset/problem/1612/C
+ → Chat Ban
+👉 Hint: Binary search + math
+https://codeforces.com/problemset/problem/1360/D
+ → Buying Shovels
+👉 Hint: Find divisor ≤ k
+
+⚫ 1400 Rating (Strong Number Theory)
+https://codeforces.com/problemset/problem/1343/A
+ → Candies
+👉 Hint: Try k such that n divisible by (2^k -1)
+https://codeforces.com/problemset/problem/1350/B
+ → Orac and Models
+👉 Hint: Divisor-based transitions
+https://codeforces.com/problemset/problem/1370/C
+ → Number Game
+👉 Hint: Prime factorization + game logic
+https://codeforces.com/problemset/problem/1454/D
+ → Number into Sequence
+👉 Hint: Prime factorization → max exponent
+
+🟤 1500 Rating (Serious GCD / Prime Skills)
+https://codeforces.com/problemset/problem/1475/G
+ → Strange Beauty
+👉 Hint: Frequency over multiples
+https://codeforces.com/problemset/problem/1744/E1
+ → Divisible Numbers
+👉 Hint: Work with divisors and multiples
+https://codeforces.com/problemset/problem/1294/C
+ → Product of Three Numbers
+👉 Hint: Find 3 distinct factors
+https://codeforces.com/problemset/problem/1516/D
+ → Cut
+👉 Hint: Prime factor tracking + preprocessing
+
+
+Topic Name - Trees
+
+🟢 800 Rating (Tree Basics / Graph as Tree)
+https://codeforces.com/problemset/problem/339/B
+ → Xenia and Ringroad
+👉 Hint: Simulation (not tree, but movement on circular structure)
+https://codeforces.com/problemset/problem/500/A
+ → New Year Transportation
+👉 Hint: Treat as directed jumps → simple traversal
+https://codeforces.com/problemset/problem/510/A
+ → Fox And Snake
+👉 Hint: Pattern printing (break problem)
+
+👉 ⚠️ At 800, CF rarely gives “pure trees” — just basic traversal thinking
+
+🟡 900 Rating (Intro Tree Thinking)
+https://codeforces.com/problemset/problem/115/A
+ → Party
+👉 Hint: Build tree from manager array → find max depth
+https://codeforces.com/problemset/problem/268/A
+ → Games
+👉 Hint: Counting (break problem)
+https://codeforces.com/problemset/problem/32/B
+ → Borze
+👉 Hint: Parsing (break problem)
+
+👉 Focus: parent-child relationships
+
+🔵 1000 Rating (Basic DFS/BFS)
+https://codeforces.com/problemset/problem/580/C
+ → Kefa and Park
+👉 Hint: DFS with constraint (cat count)
+https://codeforces.com/problemset/problem/404/A
+ → Valera and X
+👉 Hint: Matrix pattern (break)
+https://codeforces.com/problemset/problem/742/A
+ → Arpa’s hard exam
+👉 Hint: Math (break)
+
+👉 Core idea: DFS traversal
+
+🟣 1200 Rating (Real Tree Problems Start)
+https://codeforces.com/problemset/problem/337/A
+ → Puzzles
+👉 Hint: Sorting (break)
+https://codeforces.com/problemset/problem/208/E
+ → Blood Cousins
+👉 Hint: DFS + levels (advanced, try later)
+https://codeforces.com/problemset/problem/219/A
+ → k-String
+👉 Hint: frequency (break)
+
+👉 ⚠️ CF mixes topics heavily — but start learning:
+
+subtree
+depth
+parent tracking
+🔴 1300 Rating (Important Tree Skills)
+https://codeforces.com/problemset/problem/763/A
+ → Timofey and a tree
+👉 Hint: Try root candidates → check color consistency
+https://codeforces.com/problemset/problem/1328/E
+ → Tree Queries
+👉 Hint: Move nodes to parents → compare depths
+https://codeforces.com/problemset/problem/977/E
+ → Cyclic Components
+👉 Hint: Graph + degree check
+
+👉 Focus:
+
+tree properties
+DFS reasoning
+⚫ 1400 Rating (Intermediate Tree Problems)
+https://codeforces.com/problemset/problem/545/C
+ → Woodcutters
+👉 Hint: Greedy (not tree, but good logic)
+https://codeforces.com/problemset/problem/1092/F
+ → Tree with Maximum Cost
+👉 Hint: Rerooting DP idea
+https://codeforces.com/problemset/problem/1000/E
+ → We Need More Bosses
+👉 Hint: Bridges + tree compression
+
+👉 Core ideas:
+
+subtree sizes
+rerooting
+tree transformations
+🟤 1500 Rating (Strong Tree Concepts)
+https://codeforces.com/problemset/problem/161/D
+ → Distance in Tree
+👉 Hint: Count pairs with distance k → DP on tree
+https://codeforces.com/problemset/problem/600/E
+ → Lomsat gelral
+👉 Hint: DSU on tree (small-to-large merging)
+https://codeforces.com/problemset/problem/1528/A
+ → Parsa’s Humongous Tree
+👉 Hint: DP on tree (choose values per node)
+
+
+Topic Name - Matrix/Grids
+
+🟢 800 Rating (Basic Matrix Handling)
+https://codeforces.com/problemset/problem/263/A
+ → Beautiful Matrix
+👉 Hint: Find position of 1 → distance to center
+https://codeforces.com/problemset/problem/59/A
+ → Word
+👉 Hint: Not matrix (break problem)
+https://codeforces.com/problemset/problem/266/A
+ → Stones on the Table
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/791/A
+ → Bear and Big Brother
+👉 Hint: Not matrix (break)
+
+👉 Focus: row/column indexing + scanning
+
+🟡 900 Rating (Matrix Traversal Basics)
+https://codeforces.com/problemset/problem/69/A
+ → Young Physicist
+👉 Hint: Sum each column → check all zero
+https://codeforces.com/problemset/problem/339/A
+ → Helpful Maths
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/405/A
+ → Gravity Flip
+👉 Hint: Sort columns
+https://codeforces.com/problemset/problem/707/A
+ → Brain's Photos
+👉 Hint: Check grid for colored cells
+
+👉 Focus: iteration + aggregation
+
+🔵 1000 Rating (Pattern + Simulation)
+https://codeforces.com/problemset/problem/500/A
+ → New Year Transportation
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/510/A
+ → Fox And Snake
+👉 Hint: Print pattern row by row
+https://codeforces.com/problemset/problem/43/A
+ → Football
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/118/A
+ → String Task
+👉 Hint: Not matrix (break)
+
+👉 Focus:
+
+pattern construction
+row/column rules
+🟣 1200 Rating (Grid Logic Starts)
+https://codeforces.com/problemset/problem/96/B
+ → Lucky Numbers (easy version)
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/520/A
+ → Pangram
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/588/A
+ → Duff and Meat
+👉 Hint: Not matrix (break)
+
+👉 ⚠️ At this level, CF mixes topics — start thinking:
+
+neighbors (up/down/left/right)
+boundaries
+🔴 1300 Rating (Important Grid Problems)
+https://codeforces.com/problemset/problem/500/A
+ → New Year Transportation
+👉 Hint: Graph-like traversal
+https://codeforces.com/problemset/problem/242/B
+ → Big Segment
+👉 Hint: Not matrix (break)
+https://codeforces.com/problemset/problem/37/A
+ → Towers
+👉 Hint: Frequency (break)
+
+👉 Core idea:
+
+treat grid as graph
+⚫ 1400 Rating (DFS/BFS on Grid)
+https://codeforces.com/problemset/problem/377/A
+ → Maze
+👉 Hint: DFS → block k cells
+https://codeforces.com/problemset/problem/616/C
+ → The Labyrinth
+👉 Hint: Connected components + sizes
+https://codeforces.com/problemset/problem/520/B
+ → Two Buttons
+👉 Hint: BFS (state transitions, not grid but similar thinking)
+
+👉 Focus:
+
+BFS / DFS
+visited array
+components
+🟤 1500 Rating (Strong Matrix Skills)
+https://codeforces.com/problemset/problem/246/D
+ → Colorful Graph
+👉 Hint: Graph adjacency counts
+https://codeforces.com/problemset/problem/1365/D
+ → Solve The Maze
+👉 Hint: Block bad cells → BFS from end
+https://codeforces.com/problemset/problem/1350/E
+ → Orac and Game of Life
+👉 Hint: Multi-source BFS + time layers
+
+
+Topic Name - Games
+
+🟢 800 Rating (Basic Game Logic)
+https://codeforces.com/problemset/problem/705/A
+ → Hulk
+👉 Hint: Pattern alternates (not real game, warm-up)
+https://codeforces.com/problemset/problem/734/A
+ → Anton and Danik
+👉 Hint: Count wins → compare
+https://codeforces.com/problemset/problem/703/A
+ → Mishka and Game
+👉 Hint: Compare scores round-wise
+
+👉 Focus: who wins based on counts
+
+🟡 900 Rating (Simple Decision Games)
+https://codeforces.com/problemset/problem/1367/A
+ → Short Substrings
+👉 Hint: Not game (break)
+https://codeforces.com/problemset/problem/1373/A
+ → Donut Shops
+👉 Hint: Compare two strategies
+https://codeforces.com/problemset/problem/1399/A
+ → Remove Smallest
+👉 Hint: Sort + check feasibility
+
+👉 Focus: basic decision making
+
+🔵 1000 Rating (Intro Game Thinking)
+https://codeforces.com/problemset/problem/1030/A
+ → In Search of an Easy Problem
+👉 Hint: If any “hard” → outcome fixed
+https://codeforces.com/problemset/problem/268/A
+ → Games
+👉 Hint: Count matching uniforms
+https://codeforces.com/problemset/problem/734/B
+ → Anton and Digits
+👉 Hint: Greedy maximize score
+
+👉 Focus: optimal move = simple greedy
+
+🟣 1200 Rating (Game Observation Starts)
+https://codeforces.com/problemset/problem/1191/A
+ → Tokitsukaze and Enhancement
+👉 Hint: Check n % 4 → pattern
+https://codeforces.com/problemset/problem/1370/C
+ → Number Game
+👉 Hint: Prime factorization + cases
+https://codeforces.com/problemset/problem/451/A
+ → Game With Sticks
+👉 Hint: Moves = min(n, m), parity decides
+
+👉 Focus:
+
+parity
+pattern recognition
+🔴 1300 Rating (Important Game Patterns)
+https://codeforces.com/problemset/problem/1195/B
+ → Sport Mafia
+👉 Hint: Math + reverse thinking
+https://codeforces.com/problemset/problem/1368/A
+ → C+=
+👉 Hint: Simulate additions
+https://codeforces.com/problemset/problem/1472/D
+ → Even-Odd Game
+👉 Hint: Sort → alternate picking
+
+👉 Core idea:
+
+simulate optimal turns
+greedy + parity
+⚫ 1400 Rating (Real Game Reasoning)
+https://codeforces.com/problemset/problem/1382/B
+ → Sequential Nim
+👉 Hint: Count leading ones → parity
+https://codeforces.com/problemset/problem/1396/B
+ → Stoned Game
+👉 Hint: Largest pile vs sum of others
+https://codeforces.com/problemset/problem/1527/B1
+ → Palindrome Game (easy)
+👉 Hint: Count zeros → parity decisions
+
+👉 Focus:
+
+Nim-like logic
+winning conditions
+🟤 1500 Rating (Strong Game Problems)
+https://codeforces.com/problemset/problem/1527/B2
+ → Palindrome Game (hard)
+👉 Hint: More cases + symmetry
+https://codeforces.com/problemset/problem/1537/D
+ → Deleting Divisors
+👉 Hint: Prime factorization + parity
+https://codeforces.com/problemset/problem/1191/D
+ → Tokitsukaze, CSL and Stone Game
+👉 Hint: Reduce to known game pattern
+
+
+Topic Name - Sortings
+
+🟢 800 Rating (Basic Sorting)
+https://codeforces.com/problemset/problem/339/A
+ → Helpful Maths
+👉 Hint: Extract numbers → sort → rebuild
+https://codeforces.com/problemset/problem/405/A
+ → Gravity Flip
+👉 Hint: Sort column heights
+https://codeforces.com/problemset/problem/266/A
+ → Stones on the Table
+👉 Hint: Not sorting (break)
+
+👉 Focus: basic array sort + output formatting
+
+🟡 900 Rating (Simple Sorting Logic)
+https://codeforces.com/problemset/problem/230/A
+ → Dragons
+👉 Hint: Sort by strength → process greedily
+https://codeforces.com/problemset/problem/160/A
+ → Twins
+👉 Hint: Sort descending → take largest first
+https://codeforces.com/problemset/problem/469/A
+ → I Wanna Be the Guy
+👉 Hint: Use set (sorting optional)
+
+👉 Focus:
+
+sorting + greedy
+🔵 1000 Rating (Sorting + Conditions)
+https://codeforces.com/problemset/problem/337/A
+ → Puzzles
+👉 Hint: Sort → sliding window min diff
+https://codeforces.com/problemset/problem/43/A
+ → Football
+👉 Hint: Frequency (not sorting heavy)
+https://codeforces.com/problemset/problem/456/A
+ → Laptops
+👉 Hint: Sort by price → check inconsistency
+
+👉 Focus:
+
+sorting + scanning
+🟣 1200 Rating (Important Patterns)
+https://codeforces.com/problemset/problem/580/A
+ → Kefa and First Steps
+👉 Hint: Not sorting (break)
+https://codeforces.com/problemset/problem/492/B
+ → Vanya and Lanterns
+👉 Hint: Sort → check gaps
+https://codeforces.com/problemset/problem/681/B
+ → Economy Game
+👉 Hint: Not sorting (break)
+
+👉 Core idea:
+
+sorting helps reveal structure
+🔴 1300 Rating (Greedy + Sorting)
+https://codeforces.com/problemset/problem/149/A
+ → Business Trip
+👉 Hint: Sort descending → pick until sum ≥ k
+https://codeforces.com/problemset/problem/500/A
+ → New Year Transportation
+👉 Hint: Not sorting (break)
+https://codeforces.com/problemset/problem/478/B
+ → Random Teams
+👉 Hint: Math (break)
+
+👉 Focus:
+
+greedy after sorting
+⚫ 1400 Rating (Advanced Sorting Usage)
+https://codeforces.com/problemset/problem/1399/C
+ → Boats Competition
+👉 Hint: Sort → try all sums → two pointers
+https://codeforces.com/problemset/problem/1360/B
+ → Honest Coach
+👉 Hint: Sort → find min adjacent diff
+https://codeforces.com/problemset/problem/1475/A
+ → Odd Divisor
+👉 Hint: Not sorting (break)
+
+👉 Core idea:
+
+sorting + two pointers
+🟤 1500 Rating (Strong Sorting Patterns)
+https://codeforces.com/problemset/problem/489/B
+ → BerSU Ball
+👉 Hint: Sort both arrays → greedy pairing
+https://codeforces.com/problemset/problem/1201/C
+ → Maximum Median
+👉 Hint: Sort + binary search
+https://codeforces.com/problemset/problem/1359/C
+ → Mixing Water
+👉 Hint: Binary search + math
+
+👉 Focus:
+
+sorting + binary search combo
+
+
+
+
