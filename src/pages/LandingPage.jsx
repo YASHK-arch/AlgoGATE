@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Code2, TrendingUp, Compass, BookOpen, MessageSquare, Zap, ArrowRight, CheckCircle2, Star, Target, Layers } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { TOPICS } from '../utils/questionData';
 
 const FEATURES = [
   { icon: TrendingUp, title: 'Progressive Difficulty', desc: 'Start at CF-800 and climb to 1500 with structured level gates. No more jumping into the deep end.', color: 'text-brand-400' },
@@ -11,8 +12,6 @@ const FEATURES = [
   { icon: MessageSquare, title: 'Discussion Threads', desc: 'Each problem has a live discussion. Post solutions, ask doubts, reply to peers in real-time.', color: 'text-rose-400' },
   { icon: CheckCircle2,  title: 'Progress Tracking', desc: 'GitHub-style heatmap, streak counter, per-topic rings — see your journey at a glance.', color: 'text-orange-400' },
 ];
-
-const TOPICS = ['Arrays','Strings','Math','Greedy','Binary Search','Sorting','DP','Graphs','Trees','Implementation'];
 
 const STEPS = [
   { n: '01', title: 'Create Account', desc: 'Sign up in seconds and link your Codeforces handle.' },
@@ -71,9 +70,9 @@ export default function LandingPage() {
           {/* Topic pills */}
           <div className="flex flex-wrap justify-center gap-2 mt-14 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             {TOPICS.map(t => (
-              <span key={t} className="px-3 py-1.5 text-xs font-medium rounded-full border border-white/8 bg-white/5 text-gray-400 hover:border-brand-500/40 hover:text-brand-300 transition-all duration-200 cursor-default">
+              <Link key={t} to={`/practice/${encodeURIComponent(t)}`} className="px-3 py-1.5 text-xs font-medium rounded-full border border-white/8 bg-white/5 text-gray-400 hover:border-brand-500/40 hover:text-brand-300 transition-all duration-200 cursor-pointer">
                 {t}
-              </span>
+              </Link>
             ))}
           </div>
         </div>
