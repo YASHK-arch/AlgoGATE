@@ -132,11 +132,11 @@ export default function Dashboard() {
         )}
 
         {/* ── Disclaimer ───────────────────── */}
-        <div className="mt-6 lg:mt-0 lg:absolute lg:bottom-6 lg:right-6 lg:w-[400px] xl:w-[450px] glass p-4 text-xs text-gray-400/90 border border-brand-500/20 bg-brand-500/5 rounded-xl shadow-lg z-10 transition-all hover:bg-brand-500/10 hover:border-brand-500/30">
-          <p className="flex items-start gap-2.5 leading-relaxed">
-            <span className="text-brand-400 shrink-0 text-sm mt-0.5">ℹ️</span>
+        <div className="mt-4 lg:mt-0 lg:absolute lg:bottom-4 lg:right-4 w-full lg:w-[300px] glass p-2.5 text-[10px] text-yellow-200/80 border border-yellow-500/30 bg-yellow-500/10 rounded-lg shadow-xl z-10 transition-all hover:bg-yellow-500/20 hover:border-yellow-500/50">
+          <p className="flex items-start gap-2 leading-tight">
+            <span className="text-yellow-400 shrink-0 text-xs mt-0.5">⚠️</span>
             <span>
-              <strong className="text-brand-300/90 font-medium">Disclaimer:</strong> The questions of these topics may or may not require the topic concepts, the topics are just for specificity of the domain of the concepts. Higher rating questions of these topics usually involve full use of its main concepts.
+              <strong className="text-yellow-400 font-semibold">Disclaimer:</strong> The questions of these topics may or may not require the topic concepts, the topics are just for specificity of the domain of the concepts. Higher rating questions of these topics usually involve full use of its main concepts.
             </span>
           </p>
         </div>
