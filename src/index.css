@@ -232,4 +232,74 @@ html.light {
 
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  /* ── Notebook & Custom Animations ───────────── */
+  .notebook-paper {
+    background-color: #fdfaf3; /* Creamy paper */
+    background-image: 
+      linear-gradient(to right, rgba(239, 68, 68, 0.2) 2px, transparent 2px),
+      linear-gradient(to bottom, transparent 27px, rgba(59, 130, 246, 0.15) 27px, rgba(59, 130, 246, 0.15) 28px);
+    background-size: 40px 28px;
+    background-position: 40px 0; /* vertical red line offset */
+    box-shadow: 
+      -4px 0 10px rgba(0,0,0,0.2) inset, 
+      10px 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    border-radius: 4px 16px 16px 4px;
+    color: #1e293b; /* Enforce dark text for readability on paper */
+  }
+
+  .spiral-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    left: -12px;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    z-index: 10;
+  }
+
+  .spiral-ring {
+    width: 28px;
+    height: 10px;
+    background: linear-gradient(135deg, #737373, #e5e5e5, #737373);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    position: relative;
+    transform: rotate(5deg);
+  }
+  .spiral-ring::after {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #171717; /* Dark hole imitation */
+    border-radius: 50%;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.8);
+  }
+
+  .font-handwriting {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif;
+  }
+}
+
+@keyframes float-rotate {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+.animate-float-rotate {
+  animation: float-rotate 5s ease-in-out infinite;
+}
+
+@keyframes sticky-flop {
+  0% { transform: rotate(15deg) scale(1.1); box-shadow: 5px 15px 20px rgba(0,0,0,0.3); }
+  100% { transform: rotate(-5deg) scale(1); box-shadow: 2px 5px 10px rgba(0,0,0,0.1); }
+}
+.animate-sticky {
+  animation: sticky-flop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
