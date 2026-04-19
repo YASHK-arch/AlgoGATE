@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Star, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
-import { ALL_QUESTIONS_MAP } from '../utils/questionData';
+import { ALL_QUESTIONS_MAP, TOPICS } from '../utils/questionData';
 import QuestionRow from '../components/practice/QuestionRow';
 
 export default function StarredPage() {
@@ -29,7 +29,7 @@ export default function StarredPage() {
         </div>
         <div>
           <h1 className="section-title">Starred Problems</h1>
-          <p className="text-xs text-gray-500">{starred.length} bookmarked problem{starred.length !== 1 ? 's' : ''}</p>
+          <p className="text-xs text-gray-500">{starredQuestions.length} bookmarked problem{starredQuestions.length !== 1 ? 's' : ''}</p>
         </div>
       </div>
 
@@ -43,7 +43,7 @@ export default function StarredPage() {
       ) : (
         <>
           {/* Group by topic */}
-          {['Arrays','Strings','Math','Greedy','Binary Search','Sorting','Implementation','DP','Graphs','Trees'].map(topic => {
+          {TOPICS.map(topic => {
             const qs = starredQuestions.filter(q => q.topic === topic);
             if (qs.length === 0) return null;
             return (
