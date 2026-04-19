@@ -7,11 +7,21 @@ import { TOPICS } from '../utils/questionData';
 import { getTopicProgress, canUnlock, getHighestUnlockedLevel, getLevelStatus } from '../utils/progressionEngine';
 import ProgressRing from '../components/dashboard/ProgressRing';
 
+const BASE = import.meta.env.BASE_URL;
+
 const TOPIC_ICONS = {
-  'Arrays':         '📦', 'Strings':       '🔤', 'Math':          '🧮',
-  'Greedy':         '💡', 'Binary Search': '🎯', 'Sorting':       '📊',
-  'Implementation': '⚙️', 'DP':            '🧠', 'Graphs':        '🕸️',
-  'Trees':          '🌳',
+  'Binary Search': `${BASE}icons/binary-search.png`,
+  'Bit-Manipulation': `${BASE}icons/bit-manipulation.png`,
+  'Games': `${BASE}icons/games.png`,
+  'Greedy': `${BASE}icons/greedy.png`,
+  'Matrix/Grids': `${BASE}icons/grid.png`,
+  'Hashing': `${BASE}icons/hashing.png`,
+  'Number Theory': `${BASE}icons/number theory.png`,
+  'Stacks': `${BASE}icons/stacks.png`,
+  'Strings': `${BASE}icons/strings.png`,
+  'Trees': `${BASE}icons/trees.png`,
+  'Prefix Sum': `${BASE}icons/prefix sum.png`,
+  'Sortings': `${BASE}icons/sorting.png`
 };
 
 export default function PracticePage() {
@@ -54,7 +64,13 @@ export default function PracticePage() {
           >
             <div className="flex items-start justify-between">
               <div>
-                <div className="text-2xl mb-2">{TOPIC_ICONS[topic] || '📌'}</div>
+                <div className="text-2xl mb-2 flex items-center justify-start h-8 w-8">
+                  {TOPIC_ICONS[topic] ? (
+                    <img src={TOPIC_ICONS[topic]} alt={topic} className="w-full h-full object-contain filter contrast-125 drop-shadow-sm brightness-110" />
+                  ) : (
+                    '📌'
+                  )}
+                </div>
                 <h3 className="text-base font-semibold text-white group-hover:text-brand-300 transition-colors">{topic}</h3>
                 <p className="text-xs text-gray-500 mt-0.5">Up to Lv.{highestLevel}</p>
               </div>

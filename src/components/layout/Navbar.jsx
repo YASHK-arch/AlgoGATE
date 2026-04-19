@@ -44,9 +44,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
 
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center shadow-glow-sm">
-            <Code2 size={16} className="text-white" />
+        <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="w-8 h-8 flex items-center justify-center transition-transform group-hover:scale-110">
+            <img src={`${import.meta.env.BASE_URL}brain.png`} alt="AlgoGATE Brain Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]" />
           </div>
           <span className="text-lg font-bold gradient-text hidden sm:block">AlgoGATE</span>
         </Link>
