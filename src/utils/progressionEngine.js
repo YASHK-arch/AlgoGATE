@@ -14,8 +14,8 @@ export function canUnlock(_userProgress, _topic, _targetLevel) {
  */
 export function getHighestUnlockedLevel(userProgress, topic) {
   for (let i = LEVELS.length - 1; i >= 0; i--) {
-    const solved = userProgress?.[topic]?.[LEVELS[i]]?.solved?.length || 0;
-    if (solved > 0) return LEVELS[i];
+    const status = getLevelStatus(userProgress, topic, LEVELS[i]);
+    if (status.solved > 0) return LEVELS[i];
   }
   return 800; // default starting level
 }
@@ -28,10 +28,9 @@ export function getTopicProgress(userProgress, topic) {
   let totalQuestions = 0;
 
   for (const level of LEVELS) {
-    const solved = userProgress?.[topic]?.[level]?.solved?.length ?? 0;
-    const total = getQForTopicLevel(topic, level).length;
-    totalSolved += solved;
-    totalQuestions += total;
+    const status = getLevelStatus(userProgress, topic, level);
+    totalSolved += status.solved;
+    totalQuestions += status.total;
   }
 
   if (totalQuestions === 0) return 0;
@@ -42,12 +41,16 @@ export function getTopicProgress(userProgress, topic) {
  * Get level completion status: { solved, total, complete }
  */
 export function getLevelStatus(userProgress, topic, level) {
-  const solved = userProgress?.[topic]?.[level]?.solved ?? [];
+  const solvedIds = userProgress?.[topic]?.[level]?.solved ?? [];
   const questions = getQForTopicLevel(topic, level);
+  
+  // Filter solved IDs to only count problems that currently exist in this level
+  const validSolvedCount = solvedIds.filter(id => questions.some(q => q.id === id)).length;
+  
   return {
-    solved: solved.length,
+    solved: validSolvedCount,
     total: questions.length,
-    complete: questions.length > 0 && solved.length >= questions.length,
+    complete: questions.length > 0 && validSolvedCount >= questions.length,
   };
 }
 
