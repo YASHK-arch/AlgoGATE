@@ -100,7 +100,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Topic Progress Rings ─────────────── */}
-      <div className="glass p-6">
+      <div className="glass p-6 relative">
         <div className="flex items-center justify-between mb-6">
           <h2 className="section-title text-xl">Topic Progress</h2>
           <Link to="/practice" className="btn-ghost text-xs gap-1">
@@ -130,6 +130,16 @@ export default function Dashboard() {
             ))}
           </div>
         )}
+
+        {/* ── Disclaimer ───────────────────── */}
+        <div className="mt-6 lg:mt-0 lg:absolute lg:bottom-6 lg:right-6 lg:w-[400px] xl:w-[450px] glass p-4 text-xs text-gray-400/90 border border-brand-500/20 bg-brand-500/5 rounded-xl shadow-lg z-10 transition-all hover:bg-brand-500/10 hover:border-brand-500/30">
+          <p className="flex items-start gap-2.5 leading-relaxed">
+            <span className="text-brand-400 shrink-0 text-sm mt-0.5">ℹ️</span>
+            <span>
+              <strong className="text-brand-300/90 font-medium">Disclaimer:</strong> The questions of these topics may or may not require the topic concepts, the topics are just for specificity of the domain of the concepts. Higher rating questions of these topics usually involve full use of its main concepts.
+            </span>
+          </p>
+        </div>
       </div>
 
       {/* ── Activity Heatmap ─────────────────── */}
