@@ -30,7 +30,7 @@ AlgoGATE solves a real pain point: CP beginners have access to thousands of prob
 
 | Dimension | AlgoGATE's approach |
 |---|---|
-| **Problem curation** | 400+ hand-picked CF problems organized by topic × difficulty level |
+| **Problem curation** | 100+ hand-picked CF problems organized by topic × difficulty level |
 | **Progress intelligence** | CF handle sync auto-maps your Codeforces history into the platform |
 | **Unified heatmap** | AlgoGATE solves + Codeforces solves merged into one activity calendar |
 | **Real-time community** | Per-problem discussion threads with live `onSnapshot` updates |

@@ -35,12 +35,12 @@ A structured, topic-wise, difficulty-gated learning journey dramatically improve
 |---|---|
 | 🔐 **Authentication** | Email/Password signup & login via Firebase Auth |
 | 📊 **Dashboard** | Streak tracker, stats overview, topic progress rings, activity heatmap |
-| 🧩 **Topic-wise Practice** | 10 DSA topics × 6 difficulty levels (800–1800) with 400+ curated CF problems |
+| 🧩 **Topic-wise Practice** | 10+ DSA topics × 8 difficulty levels (800–1500) with 100+ curated CF problems |
 | ⭐ **Star / Bookmark** | Bookmark problems; view them on a dedicated Starred page |
 | 📝 **Study Notes** | Browse PDF notes by subject (DSA Java, IITM BS Stats/Maths/Python) |
 | 💬 **Discussion Threads** | Real-time per-problem discussion via Firestore `onSnapshot` |
 | 🔄 **Codeforces Auto-Sync** | Auto-detects and marks problems solved on Codeforces into AlgoGATE progress |
-| 📈 **Activity Heatmap** | GitHub-style 52-week heatmap (AlgoGATE + CF unified) |
+| 📈 **Activity Heatmap** | Codeforces-style 52-week heatmap (AlgoGATE + CF unified) |
 | 🗓️ **Planner Calendar** | Plan and track your upcoming study sessions by date |
 | 👤 **Profile Page** | View stats, edit CF handle, manually trigger full sync |
 | 💡 **Hint System** | Collapsible, reveal-on-demand hints for curated problems |
