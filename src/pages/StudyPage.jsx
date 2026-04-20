@@ -5,7 +5,7 @@ import { BookOpen, FileText, ChevronRight, ChevronDown, Search, ExternalLink, Sp
 import { STUDY_SUBJECTS } from '../utils/studyData';
 
 function PdfCard({ pdf, folderPath, staggerIndex }) {
-  const pdfUrl = `/resources/${folderPath}/${pdf.file}`;
+  const pdfUrl = `${import.meta.env.BASE_URL}resources/${folderPath}/${pdf.file}`;
 
   return (
     <a
@@ -95,7 +95,7 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
                 {topic.agenda.map((weekData, idx) => {
-                  const pdfUrl = `/resources/${topic.folderPath}/${weekData.pdf}`;
+                  const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${weekData.pdf}`;
                   return (
                     <a 
                       href={pdfUrl}
