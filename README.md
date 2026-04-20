@@ -3,6 +3,7 @@
 > **A production-grade, AI-assisted Competitive Programming Learning Platform built with React 19 + Firebase.**
 
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://YASHK-arch.github.io/AlgoGATE)
+[![Video Demo](https://img.shields.io/badge/Video-Demo-red?style=for-the-badge&logo=youtube)](https://youtu.be/4P8quFQMnJE)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
 [![Firebase](https://img.shields.io/badge/Firebase-Firestore-orange?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
 [![Vite](https://img.shields.io/badge/Vite-8-646cff?style=for-the-badge&logo=vite)](https://vitejs.dev/)
@@ -213,7 +214,8 @@ npm run deploy
 
 ## 🌐 Live Deployment
 
-**🔗 [https://YASHK-arch.github.io/AlgoGATE](https://YASHK-arch.github.io/AlgoGATE)**
+**🔗 [Live Web App](https://YASHK-arch.github.io/AlgoGATE)**
+**📺 [Video Demo / Walkthrough](https://youtu.be/4P8quFQMnJE)**
 
 ---
 
