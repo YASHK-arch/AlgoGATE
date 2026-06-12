@@ -108,14 +108,226 @@ export const STUDY_SUBJECTS = [
       {
         id: 'iitm-maths',
         name: 'Mathematics',
-        folderPath: 'NOTES/IITM_BS/Maths',
+        folderPath: 'NOTES/IITM_BS/Maths/Foundation_maths',
         pdfs: [],
+        agenda: [
+          {
+            week: 2,
+            title: 'Determinants & Matrix Inverse',
+            pdf: 'week2.pdf',
+            items: [
+              'Determinants and Adjoint',
+              'Elementary Row Operations',
+              'Matrix Inverse',
+              'Systems of Linear Equations'
+            ]
+          },
+          {
+            week: 3,
+            title: 'Vector Spaces & Linear Independence',
+            pdf: 'week345.pdf',
+            items: [
+              'Vector Spaces',
+              'Subspaces',
+              'Linear Dependence & Independence',
+              'Applications'
+            ]
+          },
+          {
+            week: 4,
+            title: 'Span, Basis & Dimension',
+            pdf: 'week345.pdf',
+            items: [
+              'Span',
+              'Basis',
+              'Dimension',
+              'Basis and Dimension Problems'
+            ]
+          },
+          {
+            week: 5,
+            title: 'Rank, Nullity & Null Spaces',
+            pdf: 'week345.pdf',
+            items: [
+              'Rank and Nullity',
+              'Null Space',
+              'Invertibility',
+              'Special Matrices'
+            ]
+          },
+          {
+            week: 6,
+            title: 'Linear Transformations, Kernel & Image',
+            pdf: 'week6.pdf',
+            items: [
+              'Linear Transformations',
+              'Kernel and Image',
+              'Rank–Nullity Theorem',
+              'Transformation Properties',
+              'Change of Basis',
+              'Kernel & Image Computations'
+            ]
+          },
+          {
+            week: 9,
+            title: 'Multivariable Functions & Directional Derivatives',
+            pdf: 'week9.pdf',
+            items: [
+              'Multivariable Functions',
+              'Directional Derivatives',
+              'Gradient Vector',
+              'Applications',
+              'Advanced Examples'
+            ]
+          },
+          {
+            week: 10,
+            title: 'Tangent Planes & Linear Approximation',
+            pdf: 'week10.pdf',
+            items: [
+              'Directional Derivatives Review',
+              'Tangent Lines',
+              'Gradient Applications',
+              'Tangent Planes',
+              'Linear Approximation',
+              'Applications'
+            ]
+          },
+          {
+            week: 11,
+            title: 'Hessian Matrix',
+            pdf: 'week11.pdf',
+            items: [
+              'Used to check nature of critical point'
+            ]
+          }
+        ]
       },
       {
         id: 'iitm-python',
         name: 'Python',
-        folderPath: 'NOTES/IITM_BS/Python',
+        folderPath: 'NOTES/IITM_BS/Python/Python_ICP',
         pdfs: [],
+        agenda: [
+          {
+            week: 1,
+            title: 'Python Basics & Strings',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Python Fundamentals',
+              'Data Types',
+              'Operators',
+              'Strings',
+              'String Methods'
+            ]
+          },
+          {
+            week: 2,
+            title: 'Operators, Conditionals & Modules',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Assignment Operators',
+              'Additional Operators',
+              'Conditional Statements',
+              'Python Modules'
+            ]
+          },
+          {
+            week: 3,
+            title: 'Loops, Formatting & Control Statements',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Iteration',
+              'String Formatting',
+              'Print Function Options',
+              'Loop Control Statements',
+              'Numeric Concepts'
+            ]
+          },
+          {
+            week: 4,
+            title: 'Lists & Matrix Operations',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Lists',
+              'List Manipulation',
+              'List Operations',
+              'Matrix Operations'
+            ]
+          },
+          {
+            week: 5,
+            title: 'Functions & Scope',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Functions',
+              'Variable Scope',
+              'Function Arguments',
+              'Recursion Introduction'
+            ]
+          },
+          {
+            week: 6,
+            title: 'Python Collections (Tuples, Sets, Dictionaries)',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Copying Objects',
+              'Tuples',
+              'Sets',
+              'Dictionaries',
+              'Application Problem'
+            ]
+          },
+          {
+            week: 8,
+            title: 'Recursive Programming & Searching',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Recursion',
+              'Recursive Algorithms',
+              'Binary Search'
+            ]
+          },
+          {
+            week: 9,
+            title: 'File Handling',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'File Operations',
+              'File Modes',
+              'Safe File Handling',
+              'Reading Techniques',
+              'File Navigation',
+              'Applications'
+            ]
+          },
+          {
+            week: 10,
+            title: 'Object-Oriented Programming (OOP)',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'Classes and Objects',
+              'Self Keyword',
+              'Constructors',
+              'Variables in OOP',
+              'Inheritance',
+              'Method Overriding',
+              'Encapsulation'
+            ]
+          },
+          {
+            week: 11,
+            title: 'NumPy & Matplotlib',
+            pdf: 'Python-compiled.pdf',
+            items: [
+              'NumPy',
+              'NumPy vs Lists',
+              'Matplotlib',
+              'Plot Types',
+              'Visualization Concepts'
+            ]
+          }
+        ]
       },
       {
         id: 'iitm-stats',
@@ -219,6 +431,96 @@ export const STUDY_SUBJECTS = [
               'Sample Proportion',
               'Weak Law of Large Numbers (WLLN)',
               'Chebyshev inequality (sampling context)'
+            ]
+          },
+          {
+            week: 8,
+            title: 'Moment Generating Functions, CLT & Special Distributions',
+            pdf: 'week8.pdf',
+            items: [
+              'Moment Generating Function (MGF)',
+              'MGF for discrete and continuous random variables',
+              'MGF of transformed random variables',
+              'MGF of sums of independent random variables',
+              'Distribution of sums using MGF',
+              'Higher moments using MGF',
+              'MGF of sample mean',
+              'Central Limit Theorem (CLT)',
+              'Z-score and normal approximation',
+              'CLT applications for sample means and sums',
+              'Linear combinations of independent normal variables',
+              'Gamma distribution',
+              'Properties of Gamma distribution',
+              'Relationship between Gamma, Exponential and Chi-square distributions'
+            ]
+          },
+          {
+            week: 9,
+            title: 'Estimation Theory & Method of Moments',
+            pdf: 'week9.pdf',
+            items: [
+              'Population, sample, parameter and estimator',
+              'Estimation error',
+              'Chebyshev inequality for estimation bounds',
+              'Sample mean as an estimator',
+              'Consistency of estimators',
+              'Bias of an estimator',
+              'Unbiased and biased estimators',
+              'Variance of an estimator',
+              'Mean Squared Error (MSE)',
+              'Bias–Variance decomposition',
+              'Bias–Variance tradeoff',
+              'Population moments',
+              'Sample moments',
+              'Method of Moments estimation',
+              'Moments of common distributions (Bernoulli, Poisson, Exponential, Normal, Gamma)'
+            ]
+          },
+          {
+            week: 10,
+            title: 'Parameter Estimation & Bayesian Inference',
+            pdf: 'week10.pdf',
+            items: [
+              'Parameter estimation overview',
+              'Frequentist approach',
+              'Method of Moments',
+              'Maximum Likelihood Estimation (MLE)',
+              'Bayesian approach',
+              'Prior, Likelihood and Posterior distributions',
+              'Bayes\' theorem for parameter estimation',
+              'Posterior mode (MAP estimation)',
+              'Posterior mean estimation',
+              'Flat (uniform) priors',
+              'Conjugate priors',
+              'Standard conjugate prior pairs',
+              'Bernoulli–Beta model',
+              'Posterior distribution updates',
+              'Bayesian estimation for Bernoulli parameters',
+              'Normal prior–Normal likelihood model',
+              'Bayesian estimation of Normal mean'
+            ]
+          },
+          {
+            week: 11,
+            title: 'Hypothesis Testing',
+            pdf: 'week11.pdf',
+            items: [
+              'Null hypothesis (H₀) and alternative hypothesis (H₁)',
+              'Type I and Type II errors',
+              'Significance level (α)',
+              'Power of a test (1 − β)',
+              'Critical regions and rejection rules',
+              'One-tailed and two-tailed tests',
+              'Z-test',
+              'Hypothesis testing for population proportions',
+              'Large-sample proportion tests',
+              'Independent two-sample tests',
+              'Comparison of two population means',
+              'Test statistics and critical values',
+              'F-test',
+              'Comparing variances of two populations',
+              'Degrees of freedom in F-tests',
+              'Decision making using critical values'
             ]
           }
         ]

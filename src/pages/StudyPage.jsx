@@ -41,6 +41,43 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
     if (initialOpen) setOpen(true);
   }, [initialOpen]);
 
+  const agendaChunks = useMemo(() => {
+    if (!topic.agenda) return [];
+    const result = [];
+    let currentSingleGroup = [];
+    
+    // Count items per PDF
+    const pdfCounts = {};
+    topic.agenda.forEach(item => {
+      pdfCounts[item.pdf] = (pdfCounts[item.pdf] || 0) + 1;
+    });
+
+    const addedGroupedPdfs = new Set();
+
+    topic.agenda.forEach(item => {
+      if (pdfCounts[item.pdf] === 1) {
+        currentSingleGroup.push(item);
+      } else {
+        // It's part of a group (spider layout)
+        if (currentSingleGroup.length > 0) {
+          result.push({ type: 'single', items: currentSingleGroup });
+          currentSingleGroup = [];
+        }
+        if (!addedGroupedPdfs.has(item.pdf)) {
+          addedGroupedPdfs.add(item.pdf);
+          const groupItems = topic.agenda.filter(x => x.pdf === item.pdf);
+          result.push({ type: 'spider', pdf: item.pdf, items: groupItems });
+        }
+      }
+    });
+
+    if (currentSingleGroup.length > 0) {
+      result.push({ type: 'single', items: currentSingleGroup });
+    }
+
+    return result;
+  }, [topic.agenda]);
+
   return (
     <div className="border border-white/5 rounded-2xl overflow-hidden bg-dark-700/20 backdrop-blur-md animate-slide-up hover:border-white/10 transition-all duration-300"
       style={{ animationDelay: `${staggerIndex * 50}ms`, animationFillMode: 'both' }}
@@ -84,7 +121,7 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
           ))}
 
           {/* Agenda Board */}
-          {topic.agenda && topic.agenda.length > 0 && (
+          {agendaChunks.length > 0 && (
             <div className="relative z-10 sm:pl-10 mt-6 pt-6 border-t border-white/5">
               <div className="flex items-center gap-2 mb-8 animate-slide-up">
                 <div className="w-8 h-8 rounded-lg bg-orange-500/20 border border-orange-500/30 flex items-center justify-center">
@@ -93,50 +130,133 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
                 <h3 className="text-lg font-bold text-white tracking-tight">Structured Weekly Agenda</h3>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
-                {topic.agenda.map((weekData, idx) => {
-                  const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${weekData.pdf}`;
-                  return (
-                    <a 
-                      href={pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      key={weekData.week} 
-                      className="relative flex flex-col items-center animate-fade-in group cursor-pointer"
-                      style={{ animationDelay: `${idx * 100}ms`, animationFillMode: 'both' }}
-                    >
-                      {/* Header Card (The Pin Board) */}
-                      <div className="z-20 w-full px-5 py-4 rounded-xl bg-gradient-to-br from-dark-500/80 to-dark-600/80 backdrop-blur-md border border-white/10 text-center shadow-xl relative transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-brand-500/40">
-                        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity rounded-xl" />
-                        <h4 className="text-[11px] font-black text-brand-400 uppercase tracking-[0.2em] mb-1.5 drop-shadow-sm flex justify-center items-center gap-1.5">
-                          Week {weekData.week} <ExternalLink size={10} className="text-brand-500/70" />
-                        </h4>
-                        <p className="text-[13px] font-bold text-gray-100 leading-tight drop-shadow-md group-hover:text-white transition-colors">{weekData.title}</p>
-                      </div>
+              <div className="flex flex-col gap-12">
+                {agendaChunks.map((chunk, chunkIdx) => {
+                  if (chunk.type === 'single') {
+                    return (
+                      <div key={`single-${chunkIdx}`} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+                        {chunk.items.map((weekData, idx) => {
+                          const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${weekData.pdf}`;
+                          return (
+                            <a 
+                              href={pdfUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              key={weekData.week} 
+                              className="relative flex flex-col items-center animate-fade-in group cursor-pointer"
+                              style={{ animationDelay: `${idx * 100}ms`, animationFillMode: 'both' }}
+                            >
+                              {/* Header Card (The Pin Board) */}
+                              <div className="z-20 w-full px-5 py-4 rounded-xl bg-gradient-to-br from-dark-500/80 to-dark-600/80 backdrop-blur-md border border-white/10 text-center shadow-xl relative transition-transform duration-300 group-hover:-translate-y-1 group-hover:border-brand-500/40">
+                                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity rounded-xl" />
+                                <h4 className="text-[11px] font-black text-brand-400 uppercase tracking-[0.2em] mb-1.5 drop-shadow-sm flex justify-center items-center gap-1.5">
+                                  Week {weekData.week} <ExternalLink size={10} className="text-brand-500/70" />
+                                </h4>
+                                <p className="text-[13px] font-bold text-gray-100 leading-tight drop-shadow-md group-hover:text-white transition-colors">{weekData.title}</p>
+                              </div>
 
-                      {/* Strings / Wires */}
-                      <div className="relative w-full z-10 transition-transform duration-300 group-hover:-translate-y-1">
-                        <div className="absolute top-0 left-[20%] w-[2px] h-[30px] bg-gradient-to-b from-brand-400/50 to-brand-600/20 shadow-sm group-hover:from-brand-300 transition-colors duration-300" />
-                        <div className="absolute top-0 right-[20%] w-[2px] h-[30px] bg-gradient-to-b from-brand-400/50 to-brand-600/20 shadow-sm group-hover:from-brand-300 transition-colors duration-300" />
-                      </div>
+                              {/* Strings / Wires */}
+                              <div className="relative w-full z-10 transition-transform duration-300 group-hover:-translate-y-1">
+                                <div className="absolute top-0 left-[20%] w-[2px] h-[30px] bg-gradient-to-b from-brand-400/50 to-brand-600/20 shadow-sm group-hover:from-brand-300 transition-colors duration-300" />
+                                <div className="absolute top-0 right-[20%] w-[2px] h-[30px] bg-gradient-to-b from-brand-400/50 to-brand-600/20 shadow-sm group-hover:from-brand-300 transition-colors duration-300" />
+                              </div>
 
-                      {/* Hanging Card */}
-                      <div className="z-10 w-[92%] mt-[30px] bg-dark-700/60 backdrop-blur-xl rounded-b-2xl rounded-t-lg p-5 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_15px_35px_rgba(var(--brand-rgb),0.15)] group-hover:bg-dark-600/80 group-hover:border-white/15">
-                        {/* Pins */}
-                        <div className="absolute top-0 left-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)] border border-brand-300 group-hover:bg-brand-400 transition-colors duration-300" />
-                        <div className="absolute top-0 right-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)] border border-brand-300 group-hover:bg-brand-400 transition-colors duration-300" />
-                        
-                        <ul className="space-y-3 mt-2">
-                          {weekData.items.map((item, i) => (
-                            <li key={i} className="flex items-start gap-2.5 text-[12px] text-gray-300 group-hover:text-gray-200 transition-colors relative z-20">
-                              <span className="text-brand-500 font-bold opacity-80 mt-0.5 text-[10px] group-hover:opacity-100 transition-opacity">♦</span>
-                              <span className="leading-snug">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
+                              {/* Hanging Card */}
+                              <div className="z-10 w-[92%] mt-[30px] bg-dark-700/60 backdrop-blur-xl rounded-b-2xl rounded-t-lg p-5 border border-white/5 shadow-[0_15px_30px_rgba(0,0,0,0.4)] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_15px_35px_rgba(var(--brand-rgb),0.15)] group-hover:bg-dark-600/80 group-hover:border-white/15">
+                                {/* Pins */}
+                                <div className="absolute top-0 left-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)] border border-brand-300 group-hover:bg-brand-400 transition-colors duration-300" />
+                                <div className="absolute top-0 right-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--brand-rgb),0.8)] border border-brand-300 group-hover:bg-brand-400 transition-colors duration-300" />
+                                
+                                <ul className="space-y-3 mt-2">
+                                  {weekData.items.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2.5 text-[12px] text-gray-300 group-hover:text-gray-200 transition-colors relative z-20">
+                                      <span className="text-brand-500 font-bold opacity-80 mt-0.5 text-[10px] group-hover:opacity-100 transition-opacity">♦</span>
+                                      <span className="leading-snug">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </a>
+                          );
+                        })}
                       </div>
-                    </a>
-                  );
+                    );
+                  } else if (chunk.type === 'spider') {
+                    const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${chunk.pdf}`;
+                    return (
+                      <div key={chunk.pdf} className="flex flex-col items-center animate-fade-in w-full bg-dark-800/30 rounded-3xl p-6 md:p-8 border border-white/5 relative">
+                        {/* Main PDF Link Node */}
+                        <a 
+                          href={pdfUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="z-30 w-full max-w-sm px-6 py-5 rounded-2xl bg-gradient-to-br from-brand-600/30 to-brand-500/10 border border-brand-500/30 text-center shadow-[0_0_30px_rgba(var(--brand-rgb),0.15)] hover:scale-105 hover:shadow-[0_0_40px_rgba(var(--brand-rgb),0.3)] transition-all duration-300 group relative overflow-hidden"
+                        >
+                          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-5 transition-opacity" />
+                          <div className="flex flex-col items-center gap-3 relative z-10">
+                            <div className="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center border border-brand-400/30 group-hover:bg-brand-500/30 transition-colors">
+                              <FileText size={20} className="text-brand-400" />
+                            </div>
+                            <div>
+                              <h4 className="text-[10px] font-black text-brand-300 uppercase tracking-[0.2em] mb-1.5 opacity-80">Compiled Material</h4>
+                              <p className="text-[15px] font-bold text-white leading-tight break-all flex items-center justify-center gap-2">
+                                {chunk.pdf} <ExternalLink size={14} className="text-brand-400 opacity-70 group-hover:opacity-100" />
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+
+                        {/* Connection Lines & Grid */}
+                        <div className="relative w-full mt-8 pt-6 border-t-2 border-dashed border-brand-500/20">
+                          {/* Vertical Drop from Main Node to Horizontal Line */}
+                          <div className="absolute -top-8 left-1/2 w-[2px] h-8 border-l-2 border-dashed border-brand-500/20" />
+                          {/* Central dot */}
+                          <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-brand-500/40 border border-brand-400/50" />
+                          
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+                            {chunk.items.map((weekData, idx) => (
+                              <div key={weekData.week} className="relative flex flex-col items-center group">
+                                {/* Connecting line UP to the horizontal bar */}
+                                <div className="absolute -top-6 left-1/2 w-[2px] h-6 border-l-2 border-dashed border-brand-500/20 group-hover:border-brand-400/60 transition-colors duration-300" />
+                                
+                                {/* The Week Card itself (not clickable) */}
+                                <div className="w-full relative flex flex-col items-center">
+                                  {/* Header Card */}
+                                  <div className="z-20 w-full px-5 py-4 rounded-xl bg-dark-600/80 backdrop-blur-md border border-white/5 text-center shadow-md relative group-hover:border-brand-500/20 transition-colors duration-300">
+                                    <h4 className="text-[11px] font-black text-gray-400 group-hover:text-brand-400 uppercase tracking-[0.2em] mb-1.5 drop-shadow-sm transition-colors">Week {weekData.week}</h4>
+                                    <p className="text-[13px] font-bold text-gray-200 leading-tight drop-shadow-md">{weekData.title}</p>
+                                  </div>
+
+                                  {/* Strings / Wires */}
+                                  <div className="relative w-full z-10">
+                                    <div className="absolute top-0 left-[20%] w-[2px] h-[30px] bg-gradient-to-b from-gray-600/50 to-gray-700/20 group-hover:from-brand-500/40 group-hover:to-brand-600/10 transition-colors duration-300 shadow-sm" />
+                                    <div className="absolute top-0 right-[20%] w-[2px] h-[30px] bg-gradient-to-b from-gray-600/50 to-gray-700/20 group-hover:from-brand-500/40 group-hover:to-brand-600/10 transition-colors duration-300 shadow-sm" />
+                                  </div>
+
+                                  {/* Hanging Card */}
+                                  <div className="z-10 w-[92%] mt-[30px] bg-dark-700/40 backdrop-blur-xl rounded-b-2xl rounded-t-lg p-5 border border-white/5 shadow-lg group-hover:bg-dark-700/60 transition-colors duration-300">
+                                    {/* Pins */}
+                                    <div className="absolute top-0 left-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-gray-500/50 border border-gray-400/50 group-hover:bg-brand-500/60 group-hover:border-brand-400/60 transition-colors duration-300" />
+                                    <div className="absolute top-0 right-[18.2%] w-2.5 h-2.5 -mt-1.5 rounded-full bg-gray-500/50 border border-gray-400/50 group-hover:bg-brand-500/60 group-hover:border-brand-400/60 transition-colors duration-300" />
+                                    
+                                    <ul className="space-y-3 mt-2">
+                                      {weekData.items.map((item, i) => (
+                                        <li key={i} className="flex items-start gap-2.5 text-[12px] text-gray-400 group-hover:text-gray-300 transition-colors relative z-20">
+                                          <span className="text-gray-600 font-bold mt-0.5 text-[10px] group-hover:text-brand-500/80 transition-colors">♦</span>
+                                          <span className="leading-snug">{item}</span>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
                 })}
               </div>
             </div>
