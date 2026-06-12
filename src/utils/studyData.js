@@ -538,7 +538,7 @@ export const STUDY_SUBJECTS = [
 ];
 
 export function getPdfPath(subject, topic, pdf) {
-  return `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${pdf.file}`;
+  return encodeURI(`${import.meta.env.BASE_URL}resources/${topic.folderPath}/${pdf.file}`);
 }
 
 export function getSubjectById(id) {

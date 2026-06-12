@@ -5,7 +5,7 @@ import { BookOpen, FileText, ChevronRight, ChevronDown, Search, ExternalLink, Sp
 import { STUDY_SUBJECTS } from '../utils/studyData';
 
 function PdfCard({ pdf, folderPath, staggerIndex }) {
-  const pdfUrl = `${import.meta.env.BASE_URL}resources/${folderPath}/${pdf.file}`;
+  const pdfUrl = encodeURI(`${import.meta.env.BASE_URL}resources/${folderPath}/${pdf.file}`);
 
   return (
     <a
@@ -136,7 +136,7 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
                     return (
                       <div key={`single-${chunkIdx}`} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
                         {chunk.items.map((weekData, idx) => {
-                          const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${weekData.pdf}`;
+                          const pdfUrl = encodeURI(`${import.meta.env.BASE_URL}resources/${topic.folderPath}/${weekData.pdf}`);
                           return (
                             <a 
                               href={pdfUrl}
@@ -182,7 +182,7 @@ function TopicAccordion({ topic, initialOpen, staggerIndex }) {
                       </div>
                     );
                   } else if (chunk.type === 'spider') {
-                    const pdfUrl = `${import.meta.env.BASE_URL}resources/${topic.folderPath}/${chunk.pdf}`;
+                    const pdfUrl = encodeURI(`${import.meta.env.BASE_URL}resources/${topic.folderPath}/${chunk.pdf}`);
                     return (
                       <div key={chunk.pdf} className="flex flex-col items-center animate-fade-in w-full bg-dark-800/30 rounded-3xl p-6 md:p-8 border border-white/5 relative">
                         {/* Main PDF Link Node */}
